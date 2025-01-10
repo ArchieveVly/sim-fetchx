@@ -1,0 +1,27 @@
+{
+  "name": "sim-fetch",
+  "version": "1.0.2",
+  "description": "simplified fetch api , use http requests in a simple way",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kanekivly/sim-fetch.git"
+  },
+  "author": "Kanekivly",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/Kanekivly/sim-fetch/issues"
+  },
+  "homepage": "https://github.com/Kanekivly/sim-fetch#readme",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "Kanekivly",
+    "DarkOaks",
+    "httpRequests",
+    "CRUD",
+    "networking"
+  ]
+}
