@@ -3,14 +3,15 @@ fetch api simplified for http requests
 e.g
 
 //get method
+
 const { simfetch } = require(".");
 
 let sf = new simfetch({
+
     baseurl:'https://jsonplaceholder.typicode.com',
     headers:{
         'Content-Type':'application/json'
-     }
-})
+     }})
 
 sf.get('/users')
  .then((data)=>{
@@ -25,3 +26,4 @@ sf.get('/users')
 it automatically checks if the requested data is text or json format 
 i'll make a clear documentation on the next update
  
+more info: https://whatsapp.com/channel/0029VakiSX04CrfclOmXP51i
