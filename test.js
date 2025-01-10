@@ -1,7 +1,7 @@
 const { simfetch } = require(".");
 
 let sf = new simfetch({
-    baseurl:'https://api.example.com/v1',
+    baseurl:'https://jsonplaceholder.typicode.com',
     headers:{
         'Content-Type':'application/json'
      }
