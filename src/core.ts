@@ -72,7 +72,7 @@ export class SimFetch {
 	}
 	
 	// Type guard for our expected error shape
-	const isHttpError = (err: unknown): err is { response ? : { status: number } } => {
+	isHttpError = (err: unknown): err is { response ? : { status: number } } => {
 		return typeof err === 'object' && err !== null && 'response' in err;
 	};
 	
