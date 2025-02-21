@@ -71,13 +71,19 @@ export class SimFetch {
 		return this._fetch(url, fetchOptions);
 	}
 	
+	// Type guard for our expected error shape
+	const isHttpError = (err: unknown): err is { response ? : { status: number } } => {
+		return typeof err === 'object' && err !== null && 'response' in err;
+	};
+	
+	
 	private async _retry(fn: () => Promise < Response > , retries = MAX_RETRIES, delay = RETRY_DELAY): Promise < Response > {
 		try {
 			return await fn();
 		} catch (error) {
 			if (retries === 0) throw error;
 			
-			if (!error.response || ![408, 500, 502, 503, 504].includes(error.response.status)) {
+			if (!isHttpError(error) || !error?.response || ![408, 500, 502, 503, 504].includes(error?.response?.status)) {
 				throw error;
 			}
 			// delay before retrying
@@ -149,18 +155,18 @@ export class SimFetch {
 		return response;
 	}
 	
-	public post < T > (path: string, data: any | Record < string, any > , options ? : IOption): Promise < Response > {
+	public post(path: string, data: any | Record < string, any > , options ? : IOption): Promise < Response > {
 		return this.create(path, {
 			method: 'POST',
-			body: JSON.stringify < T > (data),
+			body: JSON.stringify(data),
 			...options
 		});
 	}
 	
-	public put < T > (path: string, data: any | Record < string, any > , options ? : IOption): Promise < Response > {
+	public put(path: string, data: any | Record < string, any > , options ? : IOption): Promise < Response > {
 		return this.create(path, {
 			method: 'PUT',
-			body: JSON.stringify < T > (data),
+			body: JSON.stringify(data),
 			...options
 		});
 	}
