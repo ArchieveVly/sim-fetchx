@@ -83,7 +83,7 @@ export class SimFetch {
 		} catch (error) {
 			if (retries === 0) throw error;
 			
-			if (!isHttpError(error) || !error?.response || ![408, 500, 502, 503, 504].includes(error?.response?.status)) {
+			if (!this.isHttpError(error) || !error?.response || ![408, 500, 502, 503, 504].includes(error?.response?.status)) {
 				throw error;
 			}
 			// delay before retrying
