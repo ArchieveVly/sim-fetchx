@@ -1,7 +1,7 @@
 export interface IFetch {
 	baseUrl: string;
 	timeout: number;
-	retry: bool;
+	retry: boolean;
 	retryNumber: number | 5;
 	options:Record< string,any > ;
 }

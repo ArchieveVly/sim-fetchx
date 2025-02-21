@@ -2,7 +2,7 @@
   "name": "sim-fetch",
   "version": "1.0.2",
   "description": "simplified fetch api , use http requests in a simple way",
-  "main": "index.js",
+  "main": "./dist/core.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kanekivly/sim-fetch.git"

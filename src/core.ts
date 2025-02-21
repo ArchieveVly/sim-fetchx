@@ -65,7 +65,7 @@ export class SimFetch {
 		this.cache = {};
 	}
 	
-	public async create(path: string, options ?: IOption): Promise < Response > {
+	public async create(path: string, options ? : IOption): Promise < Response > {
 		const url = `${this.baseUrl}${path}`;
 		const fetchOptions = { ...this.options, ...options };
 		return this._fetch(url, fetchOptions);
@@ -86,7 +86,7 @@ export class SimFetch {
 		}
 	}
 	
-	private async _fetch(url: string, options ?: IOption): Promise < Response > {
+	private async _fetch(url: string, options ? : IOption): Promise < Response > {
 		const controller = new AbortController();
 		const timeoutId = setTimeout(() => controller.abort(), this.timeout);
 		
@@ -125,7 +125,7 @@ export class SimFetch {
 		return this._retry(fetchWithRetry);
 	}
 	
-	public async get(path: string, options ?: IOption): Promise < Response > {
+	public async get(path: string, options ? : IOption): Promise < Response > {
 		const url = `${this.baseUrl}${path}`;
 		const cacheKey = `${url}:${JSON.stringify(options)}`;
 		
@@ -149,7 +149,7 @@ export class SimFetch {
 		return response;
 	}
 	
-	public post < T > (path: string, data: any | Record < string, any > , options ?: IOption): Promise < Response > {
+	public post < T > (path: string, data: any | Record < string, any > , options ? : IOption): Promise < Response > {
 		return this.create(path, {
 			method: 'POST',
 			body: JSON.stringify < T > (data),
@@ -157,7 +157,7 @@ export class SimFetch {
 		});
 	}
 	
-	public put < T > (path: string, data: any | Record < string, any > , options ?: IOption): Promise < Response > {
+	public put < T > (path: string, data: any | Record < string, any > , options ? : IOption): Promise < Response > {
 		return this.create(path, {
 			method: 'PUT',
 			body: JSON.stringify < T > (data),
@@ -165,7 +165,7 @@ export class SimFetch {
 		});
 	}
 	
-	public delete(path: string, options ?: IOption): Promise < Response > {
+	public delete(path: string, options ? : IOption): Promise < Response > {
 		return this.create(path, {
 			method: 'DELETE',
 			...options
@@ -193,7 +193,7 @@ export class SimFetch {
 	}
 	
 	
-	public async stream(path: string, options ?: IOption): Promise < ReadableStream < Uint8Array >> {
+	public async stream(path: string, options ? : IOption): Promise < ReadableStream < Uint8Array >> {
 		const response = await this.create(path, options);
 		if (!response.body) {
 			throw new Error('Response body is not available for streaming.');
