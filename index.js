@@ -1,8 +1,8 @@
 class simfetch{
 
     constructor(options){
-        this.baseurl = options.baseurl;
-        this.headers = options.headers || {};
+        this.baseurl = options?.baseurl;
+        this.headers = options?.headers || {};
         
     }
     async fetch(path, options = {}){
