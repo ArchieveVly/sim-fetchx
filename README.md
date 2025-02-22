@@ -35,19 +35,19 @@
 To use `SimFetchX`, install it via npm:
 
 ```bash
-npm install sim-fetch
+npm install sim-fetchx
+
 ```
-
 ---
-
 ## Usage
-
+Run test within the the lib folder
+```npm test```
 ### Initialization ✳️
 
 To start using `SimFetchX`, create an instance by passing a configuration object.
 
 ```typescript
-import { SimFetchX } from 'sim-fetch';
+import { SimFetchX } from 'sim-fetchx';
 
 const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
@@ -334,7 +334,6 @@ try {
 }
 ```
 
----
 
 ## License
 ```markdown
