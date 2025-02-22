@@ -33,7 +33,7 @@
  *  OR OTHER DEALINGS IN THE SOFTWARE.            *
  **************************************************/
 import { IFetch, IOption } from './utils/types';
-export declare class SimFetch {
+export declare class SimFetchX {
     private readonly baseUrl;
     private readonly options;
     private readonly timeout;

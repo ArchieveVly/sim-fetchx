@@ -43,7 +43,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SimFetch = void 0;
+exports.SimFetchX = void 0;
 /**************************************************
  *                                                *
  *  Project : SIM-FETCH                           *
@@ -55,7 +55,7 @@ const error_1 = require("./utils/error");
 const MAX_RETRIES = 5;
 const RETRY_DELAY = 1000;
 const CACHE_TTL = 60000; // Cache TTL => 1 minute
-class SimFetch {
+class SimFetchX {
     constructor(config) {
         // Type guard for our expected error shape
         this.isHttpError = (err) => {
@@ -196,4 +196,4 @@ class SimFetch {
         this.cache = {};
     }
 }
-exports.SimFetch = SimFetch;
+exports.SimFetchX = SimFetchX;

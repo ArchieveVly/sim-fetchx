@@ -1,6 +1,6 @@
 # API Documentation 
 
-`SimFetch` is a lightweight 🚀, configurable ⚙️, and retry-enabled 🔄 HTTP client for making API requests. It supports caching 💾, retries 🔄, timeouts ⏳, and streaming 🌊, making it ideal for handling unreliable network conditions 📶 and large data transfers.
+`SimFetchX` is a lightweight 🚀, configurable ⚙️, and retry-enabled 🔄 HTTP client for making API requests. It supports caching 💾, retries 🔄, timeouts ⏳, and streaming 🌊, making it ideal for handling unreliable network conditions 📶 and large data transfers.
 
 
 ---
@@ -32,7 +32,7 @@
 
 ## Installation ✳️
 
-To use `SimFetch`, install it via npm:
+To use `SimFetchX`, install it via npm:
 
 ```bash
 npm install sim-fetch
@@ -44,12 +44,12 @@ npm install sim-fetch
 
 ### Initialization ✳️
 
-To start using `SimFetch`, create an instance by passing a configuration object.
+To start using `SimFetchX`, create an instance by passing a configuration object.
 
 ```typescript
-import { SimFetch } from 'sim-fetch';
+import { SimFetchX } from 'sim-fetch';
 
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
   timeout: 5000, // Optional: Default timeout is 5 seconds
   retry: true,   // Optional: Enable retries (default is true)
@@ -68,15 +68,15 @@ Responses are cached for 1 minute (default) to reduce redundant requests. You ca
 
 ### Retries
 
-If a request fails due to a server error (5xx) or timeout, `SimFetch` will automatically retry the request up to the specified number of times.
+If a request fails due to a server error (5xx) or timeout, `SimFetchX` will automatically retry the request up to the specified number of times.
 
 ### Streaming ✳️
 
-`SimFetch` supports streaming large responses using the `stream()` method. This is useful for downloading files or processing data in chunks.
+`SimFetchX` supports streaming large responses using the `stream()` method. This is useful for downloading files or processing data in chunks.
 
 ### Error Handling
 
-`SimFetch` provides detailed error handling, including status codes, error messages, and retry logic.
+`SimFetchX` provides detailed error handling, including status codes, error messages, and retry logic.
 
 ---
 
@@ -247,7 +247,7 @@ api.clearCache();
 ### Example 1: Fetching Data with Retries
 
 ```typescript
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
   retry: true,
   retryNumber: 3,
@@ -265,7 +265,7 @@ try {
 ### Example 2: Caching Responses
 
 ```typescript
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
 });
 
@@ -283,7 +283,7 @@ console.log(posts1 === posts2); // true
 ### Example 3: Uploading Data
 
 ```typescript
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
 });
 
@@ -299,7 +299,7 @@ console.log(await response.json());
 ### Example 4: Streaming Large Files
 
 ```typescript
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
 });
 
@@ -316,7 +316,7 @@ while (true) {
 ### Example 5: Error Handling
 
 ```typescript
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://api.example.com',
   retry: true,
   retryNumber: 3,

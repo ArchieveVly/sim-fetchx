@@ -35,7 +35,7 @@
 
 /**************************************************
  *                                                *
- *  Project : SIM-FETCH                           *
+ *  Project : SIM-FETCHX                          *
  *                                                *
  *  Year : 2025                                   *
  *                                                *
@@ -48,7 +48,7 @@ const MAX_RETRIES: number = 5;
 const RETRY_DELAY: number = 1000;
 const CACHE_TTL: number = 60000; // Cache TTL => 1 minute
 
-export class SimFetch {
+export class SimFetchX {
 	private readonly baseUrl: string;
 	private readonly options: Record < string, any > ;
 	private readonly timeout: number;
@@ -128,6 +128,7 @@ export class SimFetch {
 				throw error;
 			}
 		};
+		if (!this.retry) return; // forgot to implement the retry 😂
 		return this._retry(fetchWithRetry);
 	}
 	

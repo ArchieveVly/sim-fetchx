@@ -1,8 +1,8 @@
-const { SimFetch } = require("../dist/core.js");
+const { SimFetchX } = require("../dist/core.js");
 
 
 
-const api = new SimFetch({
+const api = new SimFetchX({
   baseUrl: 'https://jsonplaceholder.typicode.com',
   retry: true,
   retryNumber: 3,
