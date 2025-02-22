@@ -1,20 +1,17 @@
-const { simfetch } = require(".");
+const { SimFetchX } = require("../dist/core.js");
 
-let sf = new simfetch({
-    baseurl:'https://jsonplaceholder.typicode.com',
-    headers:{
-        'Content-Type':'application/json'
-     }
-})
+const api = new SimFetchX({
+  baseUrl: 'https://jsonplaceholder.typicode.com',
+  retry: true,
+  retryNumber: 3,
+});
 
-sf.get('/users')
- .then((data)=>{
-    console.log("users", data)
- })
- .catch((error)=>{
-    console.log("error fetching data: ", error);
-    
- })
-
-
-
+(async () => {
+  try {
+    const response = await api.get('/users');
+    const users = await response.json();
+    console.log(users);
+  } catch (error) {
+    console.error('Request failed:', error);
+  }
+})();
