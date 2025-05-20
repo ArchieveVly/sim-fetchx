@@ -5,20 +5,23 @@
   "main": "./dist/core.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kanekivly/sim-fetchx.git"
+    "url": "git+https://github.com/ArchieveVly/sim-fetchx.git"
   },
-  "author": "Kanekivly",
+  "author": [
+    "ArchieveVly",
+    "Dessxvii"
+  ],
   "license": "MIT",
   "private": true,
   "bugs": {
-    "url": "https://github.com/Kanekivly/sim-fetchx/issues"
+    "url": "https://github.com/ArchieveVly/sim-fetchx/issues"
   },
-  "homepage": "https://github.com/Kanekivly/sim-fetchx#readme",
+  "homepage": "https://github.com/ArchieveVly/sim-fetchx#readme",
   "scripts": {
     "test": "node ./src/test.js"
   },
   "keywords": [
-    "Kanekivly",
+    "Tools",
     "DarkOaks",
     "httpRequests",
     "CRUD",
